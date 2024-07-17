@@ -1,7 +1,5 @@
-import {  useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import HomeCar from './conponents/HomeCar'
-import Navbar from './conponents/Navbar';
 import OverLay from './conponents/OverLay';
 
 export default function App() {
