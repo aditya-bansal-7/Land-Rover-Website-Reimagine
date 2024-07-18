@@ -4,6 +4,12 @@ import { applyProps, useFrame } from '@react-three/fiber'
 import gsap from 'gsap';
 
 export function Model(props) {
+  // const modelRef = useRef();
+  // useFrame(() => {
+  //   if (modelRef.current) {
+  //     modelRef.current.rotation.y += 0.003; 
+  //   }
+  // });
   // const ref = useRef();
   // const tl = useRef();
   // const scroll = useScroll();
@@ -82,7 +88,7 @@ export function Model(props) {
     applyProps(materials.Trasnsparent_Glass, { color: 'lightblue', roughness: 0.1, clearcoat: 0.2 })
   }, [nodes, materials])
 
-  return <primitive object={scene}  {...props} />
+  return <primitive object={scene} {...props} />
 }
 
 useGLTF.preload('./models/range_rover_sport_2018.glb')
