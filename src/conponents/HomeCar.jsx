@@ -58,7 +58,7 @@ const HomeCar = () => {
         <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-50, 2, 0]} scale={[100, 2, 1]} />
         <Lightformer intensity={2} rotation-y={-Math.PI / 2} position={[50, 2, 0]} scale={[100, 2, 1]} />
         {/* Key */}
-        <Lightformer form="ring" color="yellow" intensity={10} scale={2} position={[10, 5, 10]} onUpdate={(self) => self.lookAt(0, 0, 0)} />
+        <Lightformer form="ring" color="white" intensity={10} scale={2} position={[10, 5, 10]} onUpdate={(self) => self.lookAt(0, 0, 0)} />
       </Environment>
 
       {/* <CameraRig /> */}
