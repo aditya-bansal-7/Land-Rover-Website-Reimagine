@@ -2,11 +2,16 @@ import * as THREE from 'three'
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Model } from './Model'
 import { AccumulativeShadows, ContactShadows, OrbitControls, RandomizedLight, Text, useScroll, } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { Effects } from './Effects';
 import fnt from './fonts/organetto-ultrabold-semiexp.ttf';
 const ModelBox = () => {
+  const viewport = useThree((state) => state.viewport);
   
+  const ScalingFactor = (Math.min(
+    Math.max(window.innerWidth / 1300, 0.5),
+    1
+  ));
   // const shadowRef = useRef();
   const ref = useRef();
   // const tl = useRef();
@@ -70,7 +75,7 @@ const ModelBox = () => {
   //   )
   // }, []);
   return (
-    <group ref={ref} >
+    <group scale={ScalingFactor} ref={ref} >
         
         <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
         <ContactShadows resolution={1024} frames={1} position={[0, -1.16, 0]} scale={15} blur={0.5} opacity={1} far={20} />
