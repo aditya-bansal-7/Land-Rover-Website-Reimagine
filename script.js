@@ -1,9 +1,4 @@
 const timeline = gsap.timeline();
-// timeline.to(".animate",{
-//     delay: 3,
-//     duration: .5,
-//     opacity: 0
-// });
 timeline.to(".animation",{
     delay: 14,
     duration: 1,
