@@ -19,7 +19,7 @@ const ModelBox = () => {
     }
   });
 
-  isMobile = ScalingFactor === 0.5;
+  const isMobile = ScalingFactor === 0.5;
 
   return (
     <group scale={ScalingFactor} ref={ref} >
