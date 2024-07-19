@@ -7,9 +7,9 @@ import { Suspense } from 'react';
 
 createRoot(document.getElementById('root')).render(
   <>
-  {/* <Suspense fallback={null}>
+  <Suspense fallback={null}>
     <Loading />
-  </Suspense> */}
+  </Suspense>
     <App />
   </>
 )
