@@ -47,15 +47,10 @@ body {
 }
 
 .progress-value {
-  animation: load 13s normal forwards;
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 100px;
   background: #fff;
   height: 5px;
   width: 0;
-}
-
-@keyframes load {
-  0% { width: 0; }
-  100% { width: 100%; }
+  transition: width 0.1s linear;
 }

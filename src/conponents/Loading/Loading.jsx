@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Loading.css';
 import video from './rrrrr - Trim.mp4';
 import { gsap } from 'gsap';
 
 const Loading = () => {
+    const videoRef = useRef(null);
+    const progressRef = useRef(null);
+
     useEffect(() => {
         const timeline = gsap.timeline({
             onComplete: () => {
@@ -12,7 +15,7 @@ const Loading = () => {
         });
 
         timeline.to(".animation", {
-            delay: 10,
+            delay: 14,
             duration: 1,
             y: "100%",
             ease: "power4.out"
@@ -20,15 +23,36 @@ const Loading = () => {
         timeline.to(".animation", {
             zIndex: -1
         });
+
+        const videoElement = videoRef.current;
+        const progressElement = progressRef.current;
+
+        const updateProgress = () => {
+            if (videoElement && progressElement) {
+                const progress = (videoElement.currentTime / videoElement.duration) * 100;
+                progressElement.style.width = `${progress}%`;
+                requestAnimationFrame(updateProgress);
+            }
+        };
+
+        if (videoElement) {
+            videoElement.addEventListener('play', updateProgress);
+        }
+
+        return () => {
+            if (videoElement) {
+                videoElement.removeEventListener('play', updateProgress);
+            }
+        };
     }, []);
 
     return (
         <div className="h-full w-full animation">
-            <video className='max-w-none 'autoPlay muted loop id="myVideo" preload="auto">
+            <video ref={videoRef} className='max-w-none' autoPlay muted loop id="myVideo" preload="auto">
                 <source src={video} type="video/mp4" />
             </video>
             <div className="progress">
-                <div className="progress-value"></div>
+                <div ref={progressRef} className="progress-value"></div>
             </div>
         </div>
     );
