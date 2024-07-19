@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
     
-    <Canvas shadows camera={{ position: [5, 0, 15], fov: 15 }}>
+    <Canvas className=' overflow-auto' shadows camera={{ position: [5, 0, 15], fov: 15 }}>
       
     <ScrollControls pages={3}>
       <Scroll>
