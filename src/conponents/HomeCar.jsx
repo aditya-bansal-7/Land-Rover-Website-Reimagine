@@ -1,4 +1,4 @@
-import {Environment, Lightformer, Scroll, } from '@react-three/drei'
+import {Environment, Lightformer } from '@react-three/drei'
 import ModelBox from './ModelBox';
 
 const HomeCar = () => {
