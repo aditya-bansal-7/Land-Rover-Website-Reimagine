@@ -5,7 +5,7 @@ const HomeCar = () => {
 
   return (
     <group>
-          <ModelBox />
+        <ModelBox />
         <Environment resolution={512}>
         {/* Ceiling */}
         <Lightformer intensity={2} rotation-x={Math.PI / 2} position={[0, 4, -9]} scale={[10, 1, 1]} />
