@@ -6,24 +6,9 @@ import { gsap } from 'gsap';
 const Loading = () => {
     const videoRef = useRef(null);
     const progressRef = useRef(null);
+    const animationTriggeredRef = useRef(false); // Track if animation has been triggered
 
     useEffect(() => {
-        const timeline = gsap.timeline({
-            onComplete: () => {
-                document.querySelector('.animation').classList.add('hidden');
-            }
-        });
-
-        timeline.to(".animation", {
-            delay: 14,
-            duration: 1,
-            y: "100%",
-            ease: "power4.out"
-        });
-        timeline.to(".animation", {
-            zIndex: -1
-        });
-
         const videoElement = videoRef.current;
         const progressElement = progressRef.current;
 
@@ -31,6 +16,26 @@ const Loading = () => {
             if (videoElement && progressElement) {
                 const progress = (videoElement.currentTime / videoElement.duration) * 100;
                 progressElement.style.width = `${progress}%`;
+
+                if (progress >= 95 && !animationTriggeredRef.current) {
+                    animationTriggeredRef.current = true;
+
+                    const timeline = gsap.timeline({
+                        onComplete: () => {
+                            document.querySelector('.animation').classList.add('hidden');
+                        }
+                    });
+
+                    timeline.to(".animation", {
+                        duration: 1,
+                        y: "100%",
+                        ease: "power4.out"
+                    });
+                    timeline.to(".animation", {
+                        zIndex: -1
+                    });
+                }
+
                 requestAnimationFrame(updateProgress);
             }
         };
