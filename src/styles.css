@@ -13,8 +13,4 @@
   
   body {
     background: black;
-    background-size: cover;
-    overflow: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }

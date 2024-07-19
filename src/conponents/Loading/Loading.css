@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Monument';
+}
+
+#myVideo {
+  position: absolute;
+  object-fit: cover;
+}
+
+.animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  overflow: hidden;
+  z-index: 100;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.progress {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  position: absolute;
+  bottom: 2%;
+  padding: 0 2px;
+  display: flex;
+  height: 5px;
+  width: 80%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.progress-value {
+  animation: load 13s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 5px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+}

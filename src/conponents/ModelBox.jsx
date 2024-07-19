@@ -15,7 +15,7 @@ const ModelBox = () => {
   });
 
   return (
-    <group scale={ScalingFactor} ref={ref} >
+    <group ref={ref} >
         
         <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
         <ContactShadows resolution={1024} frames={1} position={[0, -1.16, 0]} scale={15} blur={0.5} opacity={1} far={20} />
