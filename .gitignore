@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 Loading Static
+CardRotate
 *.local
 
 # Editor directories and files

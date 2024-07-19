@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Model } from './Model'
-import { AccumulativeShadows, ContactShadows, OrbitControls, RandomizedLight, Text  } from '@react-three/drei'
+import { AccumulativeShadows, OrbitControls, RandomizedLight, Text  } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber';
 import { Effects } from './Effects';
 import fnt from './fonts/organetto-ultrabold-semiexp.ttf';
@@ -24,7 +24,6 @@ const ModelBox = () => {
   return (
     <group scale={ScalingFactor} ref={ref} >
         {!isMobile && <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />}
-        <ContactShadows resolution={1024} frames={1} position={[0, -1.16, 0]} scale={15} blur={0.5} opacity={1} far={20} />
         <mesh scale={2} position={[1.5, -1.161, -1.5]} rotation={[-Math.PI / 2, 0, Math.PI / 2.5]}>
           <ringGeometry args={[0.9, 1, 4, 1]} />
           <meshStandardMaterial color="white" roughness={0.75} />

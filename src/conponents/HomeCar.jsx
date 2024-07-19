@@ -1,11 +1,14 @@
 import {Environment, Lightformer } from '@react-three/drei'
 import ModelBox from './ModelBox';
+import RingGallery from './Page3/RingGallery'
 
 const HomeCar = () => {
 
   return (
     <group>
         <ModelBox />
+        <RingGallery />
+
         <Environment resolution={512}>
         {/* Ceiling */}
         <Lightformer intensity={2} rotation-x={Math.PI / 2} position={[0, 4, -9]} scale={[10, 1, 1]} />
