@@ -1,0 +1,52 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: black;
+}
+
+model-viewer {
+    --poster-color: #e2e8f0;
+    --progress-bar-color: rgba(30, 41, 59, .5);
+    --progress-bar-height: 10px;
+}
+
+[data-color]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: -5px;
+    border: 2px solid transparent;
+    border-radius: 999px;
+}
+
+[data-color].active::before,
+[data-color]:focus::before {
+    border-color: white;
+}
+/* #btn1{
+    position: relative;
+    display: flex;
+    align-items:center;
+    columns: 2;
+    width:500px;
+    height:200px;
+    background: red;
+    position: absolute;
+    right: 2%;
+}
+#btn2{
+    position: relative;
+    display: flex;
+    align-items:center;
+    columns: 5;
+    width:400px;
+    height:300px;
+    background: blue;
+    position: absolute;
+    left: 2%;
+} */
