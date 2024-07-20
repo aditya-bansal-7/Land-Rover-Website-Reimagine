@@ -8,9 +8,10 @@ import { Suspense } from 'react';
 createRoot(document.getElementById('root')).render(
   <>
   
-    <Loading />
     <Suspense fallback={null}>
-      <App />
+    <Loading />
     </Suspense>
+      <App />
+    
   </>
 )
