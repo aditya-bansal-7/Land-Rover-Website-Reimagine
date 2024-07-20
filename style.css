@@ -1,76 +1,345 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    font-family: 'Monument';
-    overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
-}
-#myVideo {
-    position: absolute;
-    /* align-items: center; */
-    /* right: 0;
-    bottom: 0; */
-    margin-top: 0px;
-    /* margin-bottom: auto; */
-    height: 150vh;
-    width: 110vw;
-  }
-.animation{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    background-color: black;
-    color: white;
-    overflow: hidden;
-    justify-content: center;
-    z-index: 100;
-    width: 100%;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Orbitron;
+	box-sizing: border-box;
 }
 
-.container{
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f7f7f7;
-    width: 100%;
-    height: 100vh;
+*::selection {
+	background-color: #F3C5D0;
+	color: #000;
 }
-.container h1{
-    color: black;
-    font-family: 'Neutral Face';
-    text-transform: uppercase;
-    overflow: hidden;
+
+*::-webkit-scrollbar {
+	display: none;
 }
-.progress {
-    background: rgba(255,255,255,0.1);
-    border-radius: 100px;
-    position: absolute;
-    bottom: 2%;
-    padding: 0 2px;
-    display: flex;
-    height: 5px;
-    width: 1500px;
-  }
-  
-  .progress-value {
-    animation: load 13s normal forwards;
-    box-shadow: 0 10px 40px -10px #fff;
-    border-radius: 100px;
-    background: #fff;
-    height: 5px;
-    width: 0;
-  }
-  
-  @keyframes load {
-    0% { width: 0; }
-    100% { width: 100%; }
-  }
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+#main {
+	width: 100%;
+}
+
+#home {
+	width: 100%;
+}
+
+#nav {
+	position: relative;
+	display: flex;
+	padding: 2vw 10vw;
+	justify-content: space-between;
+}
+
+#nleft {
+	gap: 30px;
+	display: flex;
+}
+
+#nav a {
+	font-weight: 800;
+	color: black;
+	text-decoration: none;
+}
+
+#nav #centeratag {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 14px;
+	transform: translate(-50%, -50%);
+}
+
+#hero {
+	width: 100%;
+	margin-top: 12vw;
+	padding: 0vw 10vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#hero_left {
+	width: 10vw;
+}
+
+#hero_left p {
+	opacity: 0.5;
+	margin: 10px 0;
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: capitalize;
+}
+
+#hero_left #hero_left-imgwrapper {
+	position: relative;
+	width: 100%;
+	height: 15vw;
+	overflow: hidden;
+}
+
+#hero_left #hero_left-imgwrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#hero_center {
+	position: relative;
+	width: 30vw;
+	min-height: 42vw;
+}
+
+#hero_center #headings {
+	position: absolute;
+	top: -20%;
+	left: -23%;
+}
+
+#hero_center h1 {
+	line-height: 1;
+	font-size: 6vw;
+	font-weight: 100;
+}
+
+#imgntext {
+	width: fit-content;
+	height: fit-content;
+}
+
+#hero_center img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#hero_center p {
+	font-weight: 500;
+	font-size: 1vw;
+	width: 40%;
+	line-height: 1.3;
+}
+
+#hero_right a {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	text-decoration: none;
+}
+
+#hero_right h3 {
+	color: #333;
+	font-weight: 400;
+}
+
+#circle_visit {
+	width: 3vw;
+	height: 3vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	border: 1px solid #333;
+	text-align: left;
+}
+
+#circle_visit i {
+	color: #333;
+}
+
+#motive {
+	margin-top: 7vw;
+	display: flex;
+	justify-content: space-between;
+	padding: 3vw 10vw;
+}
+
+#motive p {
+	line-height: 1.7;
+	letter-spacing: -.009vw;
+	position: relative;
+	right: 0;
+	font-size: 1.6vw;
+	text-align: right;
+	width: 85%;
+}
+
+#motive span {
+	display: inline-block;
+	background-color: red;
+	border-radius: 100px;
+	margin: 0 13px;
+	margin-bottom: -12.5px;
+}
+
+#onespan {
+	width: 80px;
+	height: 50px;
+	background-image: url('./assets/2024_land_rover_defender_130_outbound_1_2560x1440.jpg');
+	background-size: cover;
+	background-position: 0% 60%;
+}
+
+#twospan {
+	width: 130px;
+	height: 50px;
+	background-image: url('./assets/2024_range_rover_evoque_16_2560x1440.jpg');
+	background-size: cover;
+	background-position: 0% 48%;
+}
+
+#threespan {
+	width: 80px;
+	height: 50px;
+	background-image: url('./assets/2022_range_rover_2_2560x1440.jpg');
+	background-size: cover;
+	background-position: 0% 60%;
+}
+
+#pictures {
+	padding: 3vw;
+	padding-left: 14vw;
+	padding-right: 12vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#pic_left {
+	width: 17vw;
+}
+
+#pic_right {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	width: 25vw;
+}
+
+#pic_left #picimg {
+	width: 100%;
+	height: 24vw;
+	margin-bottom: 1vw;
+}
+
+#pic_right #picimg {
+	width: 100%;
+	height: 37vw;
+	margin-bottom: 1vw;
+}
+
+#pic_left p,
+#pic_right p {
+	font-size: 1vw;
+	opacity: .8;
+	line-height: 1;
+	margin-top: 10px;
+}
+
+#pic_right p {
+	width: 70%;
+	text-align: right;
+}
+
+#pic_left h1,
+#pic_right h1 {
+	font-weight: 100;
+	font-size: 2vw;
+}
+
+#pic_left #picimg img,
+#pic_right #picimg img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#banner {
+	width: 100%;
+	margin-top: 8vw;
+	display: flex;
+	align-items: center;
+}
+
+#banner_img {
+	width: 65%;
+	height: 60vh;
+}
+
+#banner_img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 0% 70%;
+}
+
+#banner_text {
+	width: 35%;
+	padding: 0 3vw;
+}
+
+#banner_text h1 {
+	font-size: 2.5vw;
+	font-weight: 200;
+	letter-spacing: -.1vw;
+	line-height: 1;
+}
+
+#banner_text p {
+	margin-top: 20px;
+	width: 60%;
+}
+
+#future {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #FFFFFF;
+}
+
+#future video {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#future_text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	z-index: 9999;
+	background-color:rgba(245, 222, 179, 0);
+	padding: 1vw 3vw;
+	border-radius: 30px;
+}
+#future_text h1 {
+	color:wheat;
+}
+
+#future_text button {
+	padding: .8vw 1.7vw;
+	font-size: .5vw;
+	font-weight: 900;
+	margin-top: 10px;
+	border-radius: 100px;
+	background-color: #FFFFFF;
+	border: 1px solid #333;
+	color: #333;
+}
