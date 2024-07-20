@@ -8,8 +8,8 @@ const OverLay = () => {
     <>
 
     {/* first page  */}
-    <section className='h-screen w-screen flex items-center justify-start p-8 lg:p-20 select-none fixed' >
-        <Navbar />
+    <section className='fixed w-screen flex items-center justify-start p-4 lg:p-6 m-2' >
+        
     </section>
     {/* second page  */}
     <section className='h-screen w-screen flex items-center p-8 lg:p-20 select-none mx-auto'>

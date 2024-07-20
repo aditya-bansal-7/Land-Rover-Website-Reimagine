@@ -1,113 +1,34 @@
-#trapezoid {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    height: 0;
-    border: 80px solid rgba(0,0,0,0);
-    border-top: 0 solid;
-    border-bottom: 100px solid rgba(1, 1, 1, .4);
-    -webkit-border-radius: 20px 20px 0 0;
-    border-radius: 20px 20px 0 0;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
-    color: rgba(0,0,0,0.7);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
-    margin-top:-53px;
-    width: 700px;
-    position: relative;
-    transition: all 0.7s ease;
-    padding-left:7%;
+body {
+    font-family: "Bebas Neue", sans-serif;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background: #262626;
+    line-height: 1;
+    
   }
-  
-  #trapezoid a, .subnavbtn {
-   -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
-  }
-  
-  .sub-home {
-    display: none;
-    position: absolute;
-    right: 0;
-    left: 0; 
-  
-    z-index: 1;   
-    transform: perspective(-10px);
-  }
-  
-  #trapezoid:hover .sub-home {
+  .stage {
+    height: 70px;
+    overflow: hidden;
+    display: flex;
     justify-content: center;
-    margin-top: 53px;
-  }
-  
-  .navbar {
-    position: sticky;
-    top: 0;
-    display:flex;
-    overflow:hidden;
-    justify-content: center;
-    height: 100px;
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
+    align-items: center;
     color: white;
-    text-align: center;
-    padding: 14px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    transition: all 0.5s ease;
+    font-size: clamp(2rem, 9vw + 1rem, 12rem);
   }
   
-  .subnav {
-    float: left;
+  h1 {
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    
+  }
+  
+  h1 > div {
     overflow: hidden;
   }
   
-  .subnav .subnavbtn {
-    font-size: 16px; 
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 25px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    transition: all 0.5s ease;
-  }
-  
-  .navbar a:hover, .subnav:hover .subnavbtn {
-    background:#8CA6DB;
-    color: black;
-    border-radius:5px;
-  }
-  
-  .subnav-content {
-    display: none;
+  .cloneText {
     position: absolute;
     left: 0;
-    width: 100%;
-    z-index: 1;   
-    transform: perspective(-10px);
-  }
-  
-  .subnav-content a {
-    float: left;
-    color: white;
-    text-decoration: none; 
-  }
-  
-  .subnav-content a:hover {
-    background:#B993D6;
-    color: black;
-  }
-  
-  .subnav:hover .subnav-content {
-    display: flex;
-    justify-content: center;
+    top: 0;
   }
