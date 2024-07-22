@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './Loading.css';
 import video from './rrrrr - Trim.mp4';
+import video2 from './DEFENDER.mp4'
 import { gsap } from 'gsap';
 
 const Loading = () => {
@@ -51,8 +52,11 @@ const Loading = () => {
         };
     }, []);
 
+    if (window.innerWidth < 768){
+        video = video2;
+    }
     return (
-        <div className="h-full w-full animation">
+        <div className="h-full w-full hidden animation">
             <video ref={videoRef} className='max-w-none' autoPlay muted loop id="myVideo" preload="auto">
                 <source src={video} type="video/mp4" />
             </video>

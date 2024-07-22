@@ -73,12 +73,6 @@ const swiper = new Swiper(slider, {
 
 /* ON LOAD */
 car.addEventListener('load', (event) => {
-    /* FADE OUT LOADING SCREEN */
-    // gsap.to(loading, {
-    //     duration: 1,
-    //     ease: Power4.easeOut,
-    //     autoAlpha: 0,
-    // });
 
     /* 3D CHARACTERISTICS */
     const materials = car.model.materials,

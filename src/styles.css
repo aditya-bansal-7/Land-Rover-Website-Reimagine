@@ -12,7 +12,38 @@
   }
   
   body {
-    overflow: hidden;
     background: black;
     font-family: "Bebas Neue", sans-serif;
+
+}
+.conta {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+section{
+  scroll-snap-align: start;
+}
+.canvas-sec {
+  height: 100vh;
+  background-color: #2B2D42;
+}
+.ring-container {
+  height: 100vh;
+  background-color: black;
+}
+.canvas-first {
+  height: 100vh;
+}
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; /* so that it stays on top of all other elements */
 }

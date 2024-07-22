@@ -1,16 +1,28 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { Image, useScroll } from '@react-three/drei'
+import { useFrame, useThree } from '@react-three/fiber'
+import { Image, OrbitControls, useScroll } from '@react-three/drei'
 import { easing } from 'maath'
 import './util'
 
 const RingGallery = () => {
+  const viewport = useThree((state) => state.viewport);
+  const ScalingFactor = Math.min(
+    Math.max(window.innerWidth / 1300, 0.5),
+    1.2
+  );
+  const isMobile = ScalingFactor === 0.5;
+
   return (
-      
-      <Rig scale={1.1} position={[ 0,-8.2,0]} rotation={[0, 0, 0.15]}>
+      <>
+      {!isMobile && <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2}/>}
+      <mesh>
+      <Rig scale={ScalingFactor*1.1} rotation={[0, 0, 0.15]} position={[0,0,0]}>
         <Carousel />
       </Rig>
+      </mesh>
+      </>
+      
   )
 }
 
@@ -21,9 +33,6 @@ function Rig(props) {
   const scroll = useScroll()
   useFrame(() => {
     ref.current.rotation.y = -scroll.offset * (Math.PI * 2) // Rotate contents
-    // state.events.update() 
-    // easing.damp3(state.camera.position, [-state.pointer.x * 2, state.pointer.y + 1.5, 10], 0.3, delta) // Move camera
-    // state.camera.lookAt(5, 0, 15) // Look at center
   })
   return <group ref={ref} {...props} />
 }
@@ -32,6 +41,7 @@ function Rig(props) {
 function Carousel({ radius = 1.4, count = 8 }) {
   return Array.from({ length: count }, (_, i) => (
     <Card
+      scale={1.1}
       key={i}
       url={`image/img${Math.floor(i % 10) + 1}_.jpg`}
       position={[Math.sin((i / count) * Math.PI * 2) * radius, 0, Math.cos((i / count) * Math.PI * 2) * radius]}
