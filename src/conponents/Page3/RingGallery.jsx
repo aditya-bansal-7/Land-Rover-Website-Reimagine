@@ -1,41 +1,34 @@
 import * as THREE from 'three'
+
 import { useRef, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { Image, OrbitControls, useScroll } from '@react-three/drei'
+import { Image, OrbitControls, RoundedBox, useScroll } from '@react-three/drei'
 import { easing } from 'maath'
-import './util'
+import './util';
 
-const RingGallery = () => {
+const RingGallery = ({isMobile,scale, scrollState, inViewport, ...props}) => {
   const viewport = useThree((state) => state.viewport);
   const ScalingFactor = Math.min(
     Math.max(window.innerWidth / 1300, 0.5),
     1.2
   );
-  const isMobile = ScalingFactor === 0.5;
-
+  const box = useRef();
+  useFrame(() => {
+    box.current.rotation.y = scrollState.progress * Math.PI * 2
+  })
+  
   return (
       <>
       {!isMobile && <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2}/>}
-      <mesh>
-      <Rig scale={ScalingFactor*1.1} rotation={[0, 0, 0.15]} position={[0,0,0]}>
+      <group ref={box} rotation={[0, 0, 0.15]} scale={ScalingFactor*1.1}>
         <Carousel />
-      </Rig>
-      </mesh>
+      </group>
       </>
       
   )
 }
 
 export default RingGallery
-
-function Rig(props) {
-  const ref = useRef()
-  const scroll = useScroll()
-  useFrame(() => {
-    ref.current.rotation.y = -scroll.offset * (Math.PI * 2) // Rotate contents
-  })
-  return <group ref={ref} {...props} />
-}
 
 
 function Carousel({ radius = 1.4, count = 8 }) {

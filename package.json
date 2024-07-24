@@ -10,18 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@14islands/r3f-scroll-rig": "^8.13.2",
     "@react-three/drei": "^9.108.4",
     "@react-three/fiber": "^8.16.8",
     "@react-three/postprocessing": "^2.16.2",
+    "framer-motion": "^11.3.13",
     "gsap": "^3.12.5",
+    "locomotive-scroll": "^4.1.4",
     "npm": "^10.8.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "react-intersection-observer": "^9.13.0",
     "react-router-dom": "^6.25.0",
+    "sheryjs": "^1.0.0-beta.0.1.7",
     "swiper": "^8.4.7",
-    "three": "^0.166.1"
+    "three": "^0.166.1",
+    "vite-plugin-glsl": "^1.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

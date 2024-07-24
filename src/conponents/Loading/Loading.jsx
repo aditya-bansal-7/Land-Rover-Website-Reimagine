@@ -7,8 +7,8 @@ import { gsap } from 'gsap';
 const Loading = () => {
     const videoRef = useRef(null);
     const progressRef = useRef(null);
-    const animationTriggeredRef = useRef(false); // Track if animation has been triggered
-
+    const animationTriggeredRef = useRef(false);
+    
     useEffect(() => {
         const videoElement = videoRef.current;
         const progressElement = progressRef.current;
@@ -52,14 +52,14 @@ const Loading = () => {
         };
     }, []);
 
-    if (window.innerWidth < 768){
-        video = video2;
-    }
     return (
         <div className="h-full w-full hidden animation">
-            <video ref={videoRef} className='max-w-none' autoPlay muted loop id="myVideo" preload="auto">
+            { window.innerWidth < 768 ? <video ref={videoRef} className='max-w-none' autoPlay muted loop id="myVideo" preload="auto">
+                <source src={video2} type="video/mp4" />
+            </video> :<video ref={videoRef} className='max-w-none' autoPlay muted loop id="myVideo" preload="auto">
                 <source src={video} type="video/mp4" />
             </video>
+            }
             <div className="progress">
                 <div ref={progressRef} className="progress-value"></div>
             </div>

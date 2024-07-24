@@ -15,6 +15,9 @@ CardRotate
 *.local
 Testing
 page-4
+page-2
+page-5
+page-6
 
 # Editor directories and files
 .vscode/*

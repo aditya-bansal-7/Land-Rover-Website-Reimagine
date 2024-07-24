@@ -11,8 +11,7 @@ import { useGLTF, useScroll } from '@react-three/drei'
 import { useFrame, useThree } from '@react-three/fiber';
 import gsap from 'gsap'
 
-export function Model(props) {
-  const ScrollControl = useScroll();
+export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
   const timeline = useRef();
   const wheelRef = useRef();
   const Inner2Ref = useRef();
@@ -405,7 +404,7 @@ export function Model(props) {
   },[]) 
 
     useFrame(()=>{
-        timeline.current.seek(ScrollControl.offset * timeline.current.duration() );
+        timeline.current.seek(scrollState.progress * timeline.current.duration() );
     });
   const { nodes, materials } = useGLTF('/land_rover_defender_-_edition_grasmere_green (1).glb')
   return (
