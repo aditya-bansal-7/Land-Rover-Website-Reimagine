@@ -221,20 +221,12 @@ export default function App() {
                   </UseCanvas>
                 </section>
 
-                <section className="ring-container bg-[#2B2D42]">
+                <section className="ring-container bg-black]">
                   <div className="RingContainer">
                     <div
                       ref={RingSection}
                       className="RingGallery pt-[1rem] justify-between flex flex-col">
-                      <div className="h-[10%] bg-[#2B2D42] mt-20 w-full  justify-center items-center flex gap-7 text-[1.7rem]">
-                        {/* <p>Welcome the beast into the town to conquer the roads</p> */}
-                      </div>
-                      <div className="h-[10%] bg-[#2B2D42] mb-20 w-full justify-center items-center flex gap-7 text-[1.7rem]">
-                        {/* <p>Range Rover A class of its own </p>
-                          <p>Range Rover A class of its own </p>
-                          <p>Range Rover A class of its own </p>
-                          <p>Range Rover A class of its own </p> */}
-                      </div>
+                      
                     </div>
                   </div>
                   <UseCanvas>
@@ -264,7 +256,7 @@ export default function App() {
         </div>
       </div>
       <HorizontalScrollCarousel />
-      <ParallaxEffect />
+      
       {!isMobile && (
         <div className="flex bg-[#EDF2F4] justify-center gap-20 items-center w-full h-[100vh] p-2">
           <div className=" rounded-lg border-black h-5/6 w-full mt-32 ml-10">
@@ -290,10 +282,8 @@ export default function App() {
           </div>
         </div>
       )}
+      <ParallaxEffect />
       <div class="wrapper">
-        <div class="header-container">
-          <div class="header">Put visit us video hover here</div>
-        </div>
 
         <div class="nav-container">
           <div class="nav-left">
@@ -307,7 +297,7 @@ export default function App() {
                       <div id="triangle"></div>
                     </div>
                   </div>
-                  <div class="card">
+                  <div class="card bg-[#177E89]">
                     <div class="card-title">Vehicle</div>
                     <div class="card-logo">
                       <ion-icon name="logo-codepen"></ion-icon>
@@ -333,7 +323,7 @@ export default function App() {
             <div class="nav-top">
               <div class="work nav-item">
                 <div class="card-container">
-                  <div class="card">
+                  <div class="card bg-[#084C61]">
                     <div class="card-icon">
                       <ion-icon name="code-working-sharp"></ion-icon>
                     </div>
@@ -350,7 +340,7 @@ export default function App() {
               </div>
               <div class="about nav-item">
                 <div class="card-container">
-                  <div class="card">
+                  <div class="card bg-[#DB3A34]">
                     <div class="card-icon">
                       <ion-icon name="business-sharp"></ion-icon>
                     </div>
@@ -372,7 +362,7 @@ export default function App() {
               <div class="contact nav-item">
                 <div class="contact nav-item">
                   <div class="card-container">
-                    <div class="card">
+                    <div class="card bg-[#FFC857]">
                       <div class="card-icon">
                         <ion-icon name="send-sharp"></ion-icon>
                       </div>

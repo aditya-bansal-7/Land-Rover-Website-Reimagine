@@ -4,6 +4,7 @@ import { GoArrowRight, GoX } from "react-icons/go";
 import gsap from 'gsap';
 // import SplitText from 'gsap-trial/SplitText';
 import './Navbar.css';
+import logo from './logo.png'
 
 // gsap.registerPlugin(SplitText);
 
@@ -67,8 +68,8 @@ const Navbar = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div>
-          <img src="./logo.png" alt="" />
+        <div >
+          <img className='w-10 h-10 lg:w-32 ' src={logo} alt="" />
         </div>
         <div className={`mr-10 cursor-pointer transition-transform duration-300 ${isHovered ? 'rotate-180' : 'rotate-0'}`}>
           <a onClick={() => setSidebar(true)}>
