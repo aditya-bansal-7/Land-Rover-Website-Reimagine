@@ -93,7 +93,7 @@ export default function App() {
 
   return (
     <>
-      <div ref={eventSource}>
+      <div ref={eventSource} className={isTouch ? 'pointer-events-none' : ''}>
         <GlobalCanvas
           eventSource={eventSource}
           eventPrefix="client"
