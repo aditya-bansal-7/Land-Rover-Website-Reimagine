@@ -258,8 +258,8 @@ export default function App() {
       <HorizontalScrollCarousel />
       
       {!isMobile && (
-        <div className="flex bg-[#EDF2F4] justify-center gap-20 items-center w-full h-[100vh] p-2">
-          <div className=" rounded-lg border-black h-5/6 w-full mt-32 ml-10">
+        <div className="flex bg-[black] justify-center gap-20 items-center w-full h-[100vh] p-2">
+          <div className=" rounded-lg  h-5/6 w-full mt-32 ml-10">
             <video
               className="bg-cover rounded-lg"
               autoPlay
@@ -267,8 +267,8 @@ export default function App() {
               loop
               src={DiscoveryVideo}></video>
           </div>
-          <div className="border-black w-2/5 h-5/6 mt-32 mr-5">
-            <div className="text-black">
+          <div className=" w-2/5 h-5/6 mt-32 mr-5">
+            <div className="text-[#DB3A34]">
               <p className="text-xl">Land Rover</p>
               <p className="text-8xl mt-2">Discovery </p>
             </div>
@@ -297,7 +297,7 @@ export default function App() {
                       <div id="triangle"></div>
                     </div>
                   </div>
-                  <div class="card bg-[#177E89]">
+                  <div class="card bg-[#DB3A34]">
                     <div class="card-title">Vehicle</div>
                     <div class="card-logo">
                       <ion-icon name="logo-codepen"></ion-icon>
@@ -340,7 +340,7 @@ export default function App() {
               </div>
               <div class="about nav-item">
                 <div class="card-container">
-                  <div class="card bg-[#DB3A34]">
+                  <div class="card bg-[#177E89]">
                     <div class="card-icon">
                       <ion-icon name="business-sharp"></ion-icon>
                     </div>
