@@ -24,6 +24,10 @@ body,
 .canvas-first{
   height: 100vh;
   width: 100vw;
+  
+}
+.canvas-sec {
+  background: #00205f5b;
 }
 .HomeCarPlaceHolder {
   display: flex;
@@ -55,7 +59,6 @@ body,
   position: sticky;
   top: 0vh;
   height: 100vh;
-  padding: 2rem;
 }
 
 .DefenderContainer {

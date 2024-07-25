@@ -19,7 +19,6 @@ const RingGallery = ({isMobile,scale, scrollState, inViewport, ...props}) => {
   
   return (
       <>
-      {!isMobile && <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2}/>}
       <group ref={box} rotation={[0, 0, 0.15]} scale={ScalingFactor*1.1}>
         <Carousel />
       </group>

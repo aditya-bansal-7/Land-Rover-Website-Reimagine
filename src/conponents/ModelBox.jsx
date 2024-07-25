@@ -22,14 +22,7 @@ const ModelBox = ({ isMobile, scale, inViewport, track, ...props }) => {
 
   return (
     <group scale={ScalingFactor} ref={ref} {...props}>
-      {!isMobile && (
-        <OrbitControls
-          enablePan={false}
-          enableZoom={false}
-          minPolarAngle={Math.PI / 2.2}
-          maxPolarAngle={Math.PI / 2.2}
-        />
-      )}
+      
       <mesh
         scale={2}
         position={[1.5, -1.161, -1.5]}

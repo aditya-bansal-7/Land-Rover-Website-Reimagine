@@ -10,3 +10,16 @@
     }
   }
 
+@layer base {
+    @font-face {
+      font-family: 'Mandatory';
+      src: url(./conponents/fonts/Mandatory.otf) format('otf');
+    }
+  }
+@layer base {
+    @font-face {
+      font-family: 'Kajiro';
+      src: url(./conponents/fonts/Kajiro.ttf) format('truetype');
+    }
+  }
+

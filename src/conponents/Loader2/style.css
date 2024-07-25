@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+    font-family: 'Kajiro';
+    src: url('font/Kajiro.eot');
+    src: local('Kajiro'),
+        url('font/Kajiro.eot?#iefix') format('embedded-opentype'),
+        url('font/Kajiro.woff2') format('woff2'),
+        url('font/Kajiro.woff') format('woff'),
+        url('font/Kajiro.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.loader .img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #0f0f0f;
+    color: #fff;
+    display: flex;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.col {
+    width: 50%;
+    padding: 1em;
+}
+
+h2 {
+    margin: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    font-size: 60px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.col:nth-child(2) h2 {
+    font-size: 24px;
+    text-align: right;
+    color: gray;
+}
+
+.col:nth-child(2) h2 span {
+    color: #fff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+  }
+  
+  .button-container {
+    position: absolute;
+    top: 30%;
+    right: 40%;
+    width: 300px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40vh;
+    /* overflow: hidden; */
+    transition: 0.5s;
+    border:wheat;
+
+
+  }
+  
+  .button-container button {
+    width: 101%;
+    height: 100%;
+    font-family: "Monument Extended", sans-serif;
+    font-size: 40px;
+    background: #fff;
+    -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+    mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+    -webkit-mask-size: 2300% 100%;
+    mask-size: 2300% 100%;
+    border: wheat;
+    color: #000;
+    cursor: pointer;
+    animation: anim2 0.7s steps(22) forwards;
+  }
+  
+  .button-container button:hover {
+    animation: anim1 0.7s steps(22) forwards;
+  }
+  
+  .mask {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    font-family: 'kajiro';
+    width: 101%;
+    font-weight: lighter;
+    font-size: 60px;
+    margin-top: 25px;
+    overflow: hidden;
+  }
+  .btn-7 span{
+    font-size: 60px;
+    margin-top: 25px;
+    font-family: 'kajiro';
+  }
+  
+  @keyframes anim1 {
+    from {
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+    }
+    to {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+  }
+  
+  @keyframes anim2 {
+    from {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+    to {
+      -webkit-mask-position: 100% 0;
+      mask-position: 100% 0;
+    }
+  }
+  .header .letter {
+	display: inline-block;
+	line-height: 1em;
+}
+
+.images {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+}
+
+.imgg {
+	width: 140px;
+	height: 180px;
+	background: darkblue;
+	opacity: 0.6;
+}
+
+.img-1 {
+	transform: scale(1);
+	background: url(assets/2021_land_rover_discovery_16_2560x1440.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-2 {
+	transform: scale(1.4);
+	background: url(assets/2024_land_rover_defender_130_outbound_1_2560x1440.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-3 {
+	transform: scale(1.2);
+	background: url(assets/2024_range_rover_evoque_16_2560x1440.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-4 {
+	transform: scale(0.9);
+	background: url(assets/land_rover_defender_110_country_pack_first_edition_2020_4k_2-3840x2160.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-5 {
+	transform: scale(1.2);
+	background: url(assets/peakpx6.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-6 {
+	transform: scale(1);
+	background: url(assets/2024_land_rover_defender_130_outbound_3_2560x1440.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-7 {
+	transform: scale(1.1);
+	background: url(assets/land_rover_defender_110_p400_s_urban_pack_2020_4k_2-3840x2160.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}
+
+.img-8 {
+	transform: scale(0.9);
+	background: url(assets/2022_range_rover_7_2560x1440.jpg) 50% 50% no-repeat;
+	background-size: cover;
+}  

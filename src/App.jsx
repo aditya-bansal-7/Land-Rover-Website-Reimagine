@@ -5,7 +5,9 @@ import RingGallery from "./conponents/Page3/RingGallery";
 import Messages from "./conponents/Page2/Messages";
 import ModelBox from "./conponents/ModelBox";
 import { Model } from "./conponents/Page2/Defender";
+import Landing from "./conponents/Loader2/Landing";
 import { useTransform, useScroll, motion } from "framer-motion";
+import Lenis from "lenis";
 // import ImageStyle from "./conponents/Page4/ImageStyle";
 import {
   GlobalCanvas,
@@ -29,15 +31,29 @@ const images = [
   "image/ScrollGrid/img_11.jpg",
   "image/ScrollGrid/img_12.jpg",
 ];
+import DiscoveryVideo from "/assets/DiscoveryGodEdit.mp4";
+import CarContainer from "./conponents/Prices-box/CarContainer";
+import { RREvoque } from "./conponents/Prices-box/Visual";
 
 export default function App() {
   const gallery = useRef(null);
+  const eventSource = useRef();
+  const HomeModel = useRef();
+  const RingSection = useRef();
+  const DefenderRef = useRef();
+  const section2 = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ["start end", "end start"],
   });
+  const sexy = useScroll({
+    target: section2,
+    offset: ["start start", "end end"],
+  });
+
+  const section2scroll = sexy.scrollYProgress;
 
   const { height } = dimension;
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
@@ -46,9 +62,16 @@ export default function App() {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
   useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     const resize = () => {
       setDimension({ width: window.innerWidth, height: window.innerHeight });
     };
+    requestAnimationFrame(raf);
     window.addEventListener("resize", resize);
     resize();
     return () => {
@@ -63,10 +86,9 @@ export default function App() {
       navigator.msMaxTouchPoints > 0;
     setTouch(isTouch);
   }, []);
-  const eventSource = useRef();
-  const HomeModel = useRef();
-  const RingSection = useRef();
-  const DefenderRef = useRef();
+
+  const isMobile = window.innerWidth < 768;
+
   return (
     <>
       <div ref={eventSource}>
@@ -75,9 +97,11 @@ export default function App() {
           eventPrefix="client"
           scaleMultiplier={0.01}
           camera={{ position: [5, 0, 15], fov: 15 }}
+
           style={{ pointerEvents: "none", zIndex: 0 }}>
           <Environment resolution={512}>
             {/* Ceiling */}
+
             <Lightformer
               intensity={2}
               rotation-x={Math.PI / 2}
@@ -147,6 +171,7 @@ export default function App() {
         <SmoothScrollbar>
           {(bind) => (
             <article {...bind}>
+              <Landing/>
               <Navbar />
               <Suspense fallback={null}>
                 <section className="canvas-first">
@@ -160,8 +185,19 @@ export default function App() {
                     </ScrollScene>
                   </UseCanvas>
                 </section>
+                <Suspense>
+                  {/* <section className="h-[40vh] w-[105vw] text-black flex bg-[#EDF2F4] overflow-hidden ">
+                    <div className="absolute text-white text-[20rem]  outline-black mb-[60%]">
+                      
+                    </div>
+                    <div className="w-full relative flex justify-center items-center flex-col lg:gap-5 lg:text-4xl text-2xl p-10 gap-20 font-primary">
+                      <span className="text-[#D90429]">Land Rover</span>
+                      <span>Adventure! It's in our DNA</span>
+                    </div>
+                  </section> */}
+                </Suspense>
                 <section className="canvas-sec">
-                  <div className="DefenderContainer">
+                  <div ref={section2} className="DefenderContainer">
                     <div ref={DefenderRef} className="DefenderArea">
                       <Messages />
                     </div>
@@ -174,7 +210,7 @@ export default function App() {
                             isMobile={isTouch}
                             {...props}
                             scale={0.8}
-                            position={[-4, -1.5, 1.1]}
+                            position={[-3, -1.8, 1.1]}
                             rotation={[0.2, 0.8, 0]}
                           />
                           ?
@@ -183,10 +219,33 @@ export default function App() {
                     </StickyScrollScene>
                   </UseCanvas>
                 </section>
+                <section
+                  className="h-[40vh] text-black flex bg-[#EDF2F4] "
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(43,45,66,1) 100%)",
+                  }}>
+                  <div className="w-full relative flex justify-end items-center flex-col gap-5 lg:text-4xl text-lg font-primary">
+                    <span className="text-[#D90429]">Range Rover</span>
+                    <span>A class of is own</span>
+                  </div>
+                </section>
 
-                <section className="ring-container">
+                <section className="ring-container bg-[#2B2D42]">
                   <div className="RingContainer">
-                    <div ref={RingSection} className="RingGallery"></div>
+                    <div
+                      ref={RingSection}
+                      className="RingGallery pt-[1rem] justify-between flex flex-col">
+                      <div className="h-[10%] bg-[#2B2D42] mt-20 w-full  justify-center items-center flex gap-7 text-[1.7rem]">
+                        {/* <p>Welcome the beast into the town to conquer the roads</p> */}
+                      </div>
+                      <div className="h-[10%] bg-[#2B2D42] mb-20 w-full justify-center items-center flex gap-7 text-[1.7rem]">
+                        {/* <p>Range Rover A class of its own </p>
+                          <p>Range Rover A class of its own </p>
+                          <p>Range Rover A class of its own </p>
+                          <p>Range Rover A class of its own </p> */}
+                      </div>
+                    </div>
                   </div>
                   <UseCanvas>
                     <StickyScrollScene track={RingSection}>
@@ -203,16 +262,43 @@ export default function App() {
           )}
         </SmoothScrollbar>
       </div>
-      <div className="galleryContainer">
+      <div className="galleryContainer overflow-hidden">
         <div ref={gallery} className="gallery">
           <Column images={[images[0], images[1], images[2]]} y={y} />
           <Column images={[images[3], images[4], images[5]]} y={y2} />
           <Column images={[images[6], images[7], images[8]]} y={y3} />
           <Column images={[images[9], images[10], images[11]]} y={y4} />
         </div>
-
-        <div className="h-[100vh]">Ended</div>
       </div>
+      {!isMobile && <div className="flex bg-[#EDF2F4] justify-center gap-20 items-center w-full h-[100vh] p-2">
+          <div className=" rounded-lg border-black h-5/6 w-full mt-32 ml-10">
+            <video
+              className="bg-cover rounded-lg"
+              autoPlay
+              muted
+              loop
+              src={DiscoveryVideo}></video>
+          </div>
+          <div className="border-black w-2/5 h-5/6 mt-32 mr-5">
+            <div className="text-black">
+              <p className="text-xl">Land Rover</p>
+              <p className="text-8xl mt-2">Discovery </p>
+            </div>
+            <div className="w-full h-full mt-24">
+              <img
+                className=" w-full rounded-md"
+                src="/assets/2021_land_rover_discovery_32_1600x1200.jpg"
+                alt="img"
+              />
+            </div>
+          </div>
+        </div>}
+      {/* visual container */}
+      {/* <RREvoque/> */}
+      <div className="bg-white w-full px-20">
+          <CarContainer />
+      </div>
+      <div className="h-[100vh]">Ended</div>
     </>
   );
 }

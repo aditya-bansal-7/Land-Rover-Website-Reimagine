@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         primary: "Organetto",
+        secondary: "Mandatory",
+        Kajiro: "Kajiro",
       },
     },
   },

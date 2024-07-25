@@ -12,6 +12,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import gsap from 'gsap'
 
 export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
+
   const timeline = useRef();
   const wheelRef = useRef();
   const Inner2Ref = useRef();
@@ -26,7 +27,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
   const page_3_ref = useRef();
   const page_4_ref = useRef();
   const page_5_ref = useRef();
-  const page_6_ref = useRef();
+  // const page_6_ref = useRef();
 
   useLayoutEffect(() => {
     page_1_ref.current = document.getElementById("page-1");
@@ -34,10 +35,11 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
     page_3_ref.current = document.getElementById("page-3");
     page_4_ref.current = document.getElementById("page-4");
     page_5_ref.current = document.getElementById("page-5");
-    page_6_ref.current = document.getElementById("page-6");
+    // page_6_ref.current = document.getElementById("page-6");
   }, []);
 
   useLayoutEffect(() =>{
+    
     timeline.current = gsap.timeline();
     let AnimationsData = [];
 
@@ -50,7 +52,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
               opacity: 0,
               duration: 0.3,
             },
-            timelinePoint: 0.5,
+            timelinePoint: 0.8,
           },
         {
             objectToAnimate: page_2_ref.current,
@@ -63,9 +65,9 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
         {
             objectToAnimate: generalGroupRef.current.position,
             properties:{
-                x:0,
-                y:-1,
-                z:0,
+                x:2.5,
+                y:-2.5,
+                z:7.5,
                 duration:0.8,
             },
             timelinePoint:1
@@ -74,8 +76,8 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
         {
             objectToAnimate: generalGroupRef.current.rotation,
             properties:{
-                x:0.3,
-                y:0,
+                x:0,
+                y:0.3,
                 duration:0.8,
             },
             timelinePoint:1
@@ -156,7 +158,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
             properties: {
               x: 0,
               y: -1.7,
-              z: -1.5,
+              z: -1.4,
               duration: 0.8,
             },
             timelinePoint: 3,
@@ -164,9 +166,9 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
           {
             objectToAnimate: generalGroupRef.current.position,
             properties: {
-              x: 0,
-              y: -0.5,
-              z: 0,
+              x: -0.4,
+              y: -0.4,
+              z: -2,
               duration: 0.8,
             },
             timelinePoint: 3,
@@ -237,7 +239,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
             objectToAnimate: generalGroupRef.current.position,
             properties: {
               x: 4,
-              y: -1.5,
+              y: -2,
               z: 0,
               duration: 0.8,
             },
@@ -298,7 +300,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
           objectToAnimate: generalGroupRef.current.rotation,
           properties: {
             x: 0,
-            y: -3.2,
+            y: -2.8,
             z: 0,
             duration: 0.8,
           },
@@ -308,9 +310,9 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
           objectToAnimate: generalGroupRef.current.position,
           properties: {
             
-            x: 1.5,
+            x: 2.5,
             y: -2.5,
-            z: 3,
+            z: 5.5,
             duration: 0.8,
           },
           timelinePoint: 4.3,
@@ -332,14 +334,14 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
             },
             timelinePoint: 5.8,
           },
-          {
-            objectToAnimate: page_6_ref.current,
-            properties: {
-              opacity: 1,
-              duration: 0.8,
-            },
-            timelinePoint: 6.2,
-          },
+          // {
+          //   objectToAnimate: page_6_ref.current,
+          //   properties: {
+          //     opacity: 1,
+          //     duration: 0.8,
+          //   },
+          //   timelinePoint: 6.2,
+          // },
     
         
         // Controls, Camera, Camera zoom
@@ -380,7 +382,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
           properties: {
             x: 0,
             y: -3,
-            z: 0,
+            z: -2,
             duration: 0.8,
           },
           timelinePoint: 5.9,
@@ -396,6 +398,7 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
         timeline.current.to(
             animation.objectToAnimate,{
                 ...animation.properties,
+                ease: "power4.easeInOut",
             },
             animation.timelinePoint
         );
@@ -405,11 +408,12 @@ export function Model({isMobile,scale, scrollState, inViewport, ...props}) {
 
     useFrame(()=>{
         timeline.current.seek(scrollState.progress * timeline.current.duration() );
+        // console.log(scrollState.progress);
     });
   const { nodes, materials } = useGLTF('/land_rover_defender_-_edition_grasmere_green (1).glb')
   return (
     <>
-    <group {...props} dispose={null}  ref={generalGroupRef}>
+    <group {...props} scale={0.8} dispose={null}  ref={generalGroupRef}>
       <group
         name="Object153_84"
         position={[0, 0.5, 0]}

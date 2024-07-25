@@ -96,6 +96,7 @@
     font-size: 192px;
     line-height: 200px;
     z-index: 99999;
+    top: -20%;
   }
   
   .message--sub {
