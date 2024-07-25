@@ -244,7 +244,7 @@ export default function App() {
           )}
         </SmoothScrollbar>
       </div>
-      <div className="bg-white w-full px-20">
+      <div className="bg w-full px-20">
         <CarContainer />
       </div>
       <div className="galleryContainer overflow-hidden">
@@ -255,13 +255,12 @@ export default function App() {
           <Column images={[images[9], images[10], images[11]]} y={y4} />
         </div>
       </div>
-      <HorizontalScrollCarousel />
       
       {!isMobile && (
         <div className="flex bg-[black] justify-center gap-20 items-center w-full h-[100vh] p-2">
           <div className=" rounded-lg  h-5/6 w-full mt-32 ml-10">
             <video
-              className="bg-cover rounded-lg"
+              className="bg-cover rounded-xl"
               autoPlay
               muted
               loop
@@ -269,8 +268,8 @@ export default function App() {
           </div>
           <div className=" w-2/5 h-5/6 mt-32 mr-5">
             <div className="text-[#DB3A34]">
-              <p className="text-xl">Land Rover</p>
-              <p className="text-8xl mt-2">Discovery </p>
+              <p className="text-xl font-Crotah">Land Rover</p>
+              <p className="text-7xl mt-2 font-Crotah">Discovery </p>
             </div>
             <div className="w-full h-full mt-24">
               <img
@@ -282,6 +281,8 @@ export default function App() {
           </div>
         </div>
       )}
+      <HorizontalScrollCarousel />
+      
       <ParallaxEffect />
       <div class="wrapper">
 

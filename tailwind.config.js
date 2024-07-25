@@ -10,6 +10,7 @@ export default {
         primary: "Organetto",
         secondary: "Mandatory",
         Kajiro: "Kajiro",
+        Crotah:"Crotah",
       },
     },
   },

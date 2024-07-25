@@ -20,6 +20,29 @@ body,
   margin: 0;
   padding: 0;
 }
+::-webkit-scrollbar {
+  display: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.zzztext {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  word-spacing: -1vmax;
+  background: url(/img/texture.png);
+  font-weight: 500;
+  width: 25vw;
+  height: 30vh;
+  word-spacing: 0.4vmax;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: rgb(255, 0, 0);
+  -webkit-font-smoothing: antialiased;
+}
 
 .canvas-first{
   height: 100vh;

@@ -22,4 +22,10 @@
       src: url(./conponents/fonts/Kajiro.ttf) format('truetype');
     }
   }
+@layer base {
+    @font-face {
+      font-family: 'Crotah';
+      src: url(./conponents/fonts/CrotahFreeVersionItalic-z8Ev3.ttf) format('truetype');
+    }
+  }
 

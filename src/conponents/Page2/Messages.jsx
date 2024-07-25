@@ -14,20 +14,13 @@ export default function Messages() {
           id='page-2'
           className='page page--headband page--hidden'>
           <h1 className='message w-[70vw] mt-10 ml-32'>Land Rover</h1>
-          <p className='message--sub'>
-            Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Aspernatur quae architecto
-            molestiae laudantium consequuntur.
-          </p>
         </div>
         <div
           id='page-3'
           className='page page--sounds page--hidden'>
-          <h1 className='message'>Smooth Control</h1>
+          <h1 className='message'>BOLD PRESENCE</h1>
           <p className='message--sub'>
-            Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Aspernatur quae architecto
-            molestiae laudantium consequuntur.
+            Enjoy Extreme perfomance and unmatched capability
           </p>
         </div>
         <div
@@ -35,18 +28,15 @@ export default function Messages() {
           className='page page--battery page--hidden'>
           <h1 className='message mr-[50vw]'>Powerfull</h1>
           <p className='message--sub mr-[50vw]'>
-            Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Aspernatur quae architecto
-            molestiae laudantium consequuntur.
+            The master of extreme performance.
           </p>
         </div>
         <div
           id='page-5'
           className='page page--construction page--hidden'>
-          <h1 className='message ml-10 mb-10 left-0 w-full '>Best</h1>
+          <h1 className='message ml-10 mb-10 left-0 w-full '>GET <br /> Yours</h1>
           <p className='message--sub ml-10 mb-10 left-0 w-full'>
-            Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Similique, accusamus.
+          <button className='comprar font-secondary'>Buy now</button>
           </p>
         </div>
         {/* <div

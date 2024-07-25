@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Model } from './Model';
-import { AccumulativeShadows, OrbitControls, RandomizedLight, Text } from '@react-three/drei';
+import { AccumulativeShadows, OrbitControls, PresentationControls, RandomizedLight, Text } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Effects } from './Effects';
 import fnt from './fonts/organetto-ultrabold-semiexp.ttf';
@@ -21,6 +21,11 @@ const ModelBox = ({ isMobile, scale, inViewport, track, ...props }) => {
   });
 
   return (
+    <PresentationControls
+    speed={3}
+    >
+
+    
     <group scale={ScalingFactor} ref={ref} {...props}>
       
       <mesh
@@ -43,6 +48,7 @@ const ModelBox = ({ isMobile, scale, inViewport, track, ...props }) => {
       <VideoText position={[0, 0.8, -4]} />
       <Effects />
     </group>
+    </PresentationControls>
   );
 };
 

@@ -14,7 +14,7 @@ const ModelName = ({ id, children }) => {
   }, [isInView, id, setInViewModel]);
 
   return (
-    <p ref={ref} className={`py-16 transition-colors text-4xl lg:text-5xl ${isInView ? 'text-black' : 'text-gray-300'}`}>
+    <p ref={ref} className={`py-16 zzztext transition-colors font-medium text-4xl lg:text-4xl font-primary ${isInView ? 'bg-[#DB3A34]': 'bg-[#FFC857]'}`}>
       {children}
     </p>
   );
