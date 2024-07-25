@@ -36,6 +36,7 @@ import CarContainer from "./conponents/Prices-box/CarContainer";
 import { RREvoque } from "./conponents/Prices-box/Visual";
 import HorizontalScrollCarousel from "./conponents/HorizontalScrollCarousel";
 import ParallaxEffect from "./conponents/ParallaxEffect";
+import classNames from "classnames";
 
 export default function App() {
   const gallery = useRef(null);
@@ -93,7 +94,8 @@ export default function App() {
 
   return (
     <>
-      <div ref={eventSource} className={isTouch ? 'pointer-events-none' : ''}>
+      <div ref={eventSource}
+      >
         <GlobalCanvas
           eventSource={eventSource}
           eventPrefix="client"
@@ -175,7 +177,7 @@ export default function App() {
               <Landing />
               <Navbar />
               <Suspense fallback={null}>
-                <section className="canvas-first">
+              <section className={`canvas-first ${isTouch ? 'hidden' : 'visible'}`}>
                   <div
                     ref={HomeModel}
                     className="HomeCarPlaceHolder"
