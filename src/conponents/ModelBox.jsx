@@ -21,7 +21,9 @@ const ModelBox = ({ isMobile, scale, inViewport, track, ...props }) => {
   });
 
   return (
+
     <PresentationControls
+    enabled={isMobile ? false : true}
     speed={3}
     >
 
