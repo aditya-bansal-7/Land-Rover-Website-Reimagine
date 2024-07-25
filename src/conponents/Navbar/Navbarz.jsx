@@ -68,7 +68,7 @@ const Navbar = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <div>
-          LoGo
+          <img src="./logo.png" alt="" />
         </div>
         <div className={`mr-10 cursor-pointer transition-transform duration-300 ${isHovered ? 'rotate-180' : 'rotate-0'}`}>
           <a onClick={() => setSidebar(true)}>

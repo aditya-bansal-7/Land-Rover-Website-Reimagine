@@ -34,6 +34,8 @@ const images = [
 import DiscoveryVideo from "/assets/DiscoveryGodEdit.mp4";
 import CarContainer from "./conponents/Prices-box/CarContainer";
 import { RREvoque } from "./conponents/Prices-box/Visual";
+import HorizontalScrollCarousel from "./conponents/HorizontalScrollCarousel";
+import ParallaxEffect from "./conponents/ParallaxEffect";
 
 export default function App() {
   const gallery = useRef(null);
@@ -97,7 +99,6 @@ export default function App() {
           eventPrefix="client"
           scaleMultiplier={0.01}
           camera={{ position: [5, 0, 15], fov: 15 }}
-
           style={{ pointerEvents: "none", zIndex: 0 }}>
           <Environment resolution={512}>
             {/* Ceiling */}
@@ -171,7 +172,7 @@ export default function App() {
         <SmoothScrollbar>
           {(bind) => (
             <article {...bind}>
-              <Landing/>
+              <Landing />
               <Navbar />
               <Suspense fallback={null}>
                 <section className="canvas-first">
@@ -219,17 +220,6 @@ export default function App() {
                     </StickyScrollScene>
                   </UseCanvas>
                 </section>
-                <section
-                  className="h-[40vh] text-black flex bg-[#EDF2F4] "
-                  style={{
-                    background:
-                      "linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(43,45,66,1) 100%)",
-                  }}>
-                  <div className="w-full relative flex justify-end items-center flex-col gap-5 lg:text-4xl text-lg font-primary">
-                    <span className="text-[#D90429]">Range Rover</span>
-                    <span>A class of is own</span>
-                  </div>
-                </section>
 
                 <section className="ring-container bg-[#2B2D42]">
                   <div className="RingContainer">
@@ -262,6 +252,9 @@ export default function App() {
           )}
         </SmoothScrollbar>
       </div>
+      <div className="bg-white w-full px-20">
+        <CarContainer />
+      </div>
       <div className="galleryContainer overflow-hidden">
         <div ref={gallery} className="gallery">
           <Column images={[images[0], images[1], images[2]]} y={y} />
@@ -270,7 +263,10 @@ export default function App() {
           <Column images={[images[9], images[10], images[11]]} y={y4} />
         </div>
       </div>
-      {!isMobile && <div className="flex bg-[#EDF2F4] justify-center gap-20 items-center w-full h-[100vh] p-2">
+      <HorizontalScrollCarousel />
+      <ParallaxEffect />
+      {!isMobile && (
+        <div className="flex bg-[#EDF2F4] justify-center gap-20 items-center w-full h-[100vh] p-2">
           <div className=" rounded-lg border-black h-5/6 w-full mt-32 ml-10">
             <video
               className="bg-cover rounded-lg"
@@ -292,13 +288,111 @@ export default function App() {
               />
             </div>
           </div>
-        </div>}
-      {/* visual container */}
-      {/* <RREvoque/> */}
-      <div className="bg-white w-full px-20">
-          <CarContainer />
+        </div>
+      )}
+      <div class="wrapper">
+        <div class="header-container">
+          <div class="header">Put visit us video hover here</div>
+        </div>
+
+        <div class="nav-container">
+          <div class="nav-left">
+            <div class="services nav-item">
+              <div class="services nav-item">
+                <div class="card-container">
+                  <div class="shapes-container">
+                    <div class="shapes">
+                      <div id="square"></div>
+                      <div id="circle"></div>
+                      <div id="triangle"></div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Vehicle</div>
+                    <div class="card-logo">
+                      <ion-icon name="logo-codepen"></ion-icon>
+                    </div>
+                    <div class="card-icon">
+                      <ion-icon name="arrow-down-sharp"></ion-icon>
+                    </div>
+
+                    <div class="preview-text">See all models</div>
+                    <div class="text-wrapper">
+                      Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle
+                      Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle
+                      Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle
+                      Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle Vehicle
+                      Vehicle Vehicle Vehicle Vehicle
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nav-right">
+            <div class="nav-top">
+              <div class="work nav-item">
+                <div class="card-container">
+                  <div class="card">
+                    <div class="card-icon">
+                      <ion-icon name="code-working-sharp"></ion-icon>
+                    </div>
+
+                    <div class="preview-text">Ownership</div>
+                    <div class="text-wrapper">
+                      Ownership Ownership Ownership Ownership Ownership
+                      Ownership Ownership Ownership Ownership Ownership
+                      Ownership Ownership Ownership Ownership Ownership
+                      Ownership Ownership Ownership Ownership Ownership
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about nav-item">
+                <div class="card-container">
+                  <div class="card">
+                    <div class="card-icon">
+                      <ion-icon name="business-sharp"></ion-icon>
+                    </div>
+
+                    <div class="preview-text light">About us</div>
+                    <div class="text-wrapper light">
+                      Learn more about us. Learn more about us. Learn more about
+                      us. Learn more about us. Learn more about us. Learn more
+                      about us. Learn more about us. Learn more about us. Learn
+                      more about us. Learn more about us. Learn more about us.
+                      Learn more about us. Learn more about us. Learn more about
+                      us. Learn more about us.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-bottom">
+              <div class="contact nav-item">
+                <div class="contact nav-item">
+                  <div class="card-container">
+                    <div class="card">
+                      <div class="card-icon">
+                        <ion-icon name="send-sharp"></ion-icon>
+                      </div>
+
+                      <div class="preview-text">Contact us</div>
+                      <div class="text-wrapper">
+                        Get in touch. Get in touch. Get in touch. Get in touch.
+                        Get in touch. Get in touch. Get in touch. Get in touch.
+                        Get in touch. Get in touch. Get in touch. Get in touch.
+                        Get in touch. Get in touch. Get in touch. Get in touch.
+                        Get in touch. Get in touch. Get in touch. Get in touch.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="h-[100vh]">Ended</div>
     </>
   );
 }
