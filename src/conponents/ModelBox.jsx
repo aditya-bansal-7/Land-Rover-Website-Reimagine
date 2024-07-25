@@ -23,7 +23,7 @@ const ModelBox = ({ isMobile, scale, inViewport, track, ...props }) => {
   return (
     <>
     {isMobile ? (
-      <group scale={ScalingFactor} ref={ref} {...props}>
+      <group scale={ScalingFactor} ref={ref} {...props} className="pointer-events-none" >
         <mesh
           scale={2}
           position={[1.5, -1.161, -1.5]}
